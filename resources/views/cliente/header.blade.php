@@ -1,177 +1,304 @@
- <!-- HEADER -->
- <header>
-     <!-- TOP HEADER -->
-     <div id="top-header">
-         <div class="container">
-             <ul class="header-links pull-right">
-                 <!-- Authentication Links -->
-                 @guest
-                     @if (Route::has('login'))
-                         <li class="nav-item">
-                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                         </li>
-                     @endif
-                     @if (Route::has('register'))
-                         <li class="nav-item">
-                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                         </li>
-                     @endif
-                 @else
-                     <li class="nav-item dropdown">
-                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                             {{ Auth::user()->email }}
-                         </a>
-                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                             <a class="dropdown-item" href="/cierreSesion">
-                                 {{ __('Logout') }}
-                             </a>
-                             <a class="dropdown-item" href="{{ route('perfil.edit', auth()->user()->id) }}">
-                                 {{ __('Configurar Perfil') }}
-                             </a>
-                             <a class="dropdown-item" href="{{ route('password.edit', auth()->user()->id) }}">
-                                 {{ __('Cambiar Contraseña') }}
-                             </a>
-                         </div>
-                     </li>
-                 @endguest
-             </ul>
-         </div>
-     </div>
-     <!-- /TOP HEADER -->
+  <header>
+    <div class="header-top">
+      <div class="container">
+        <ul class="header-social-container">
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+        </ul>
+        <div class="header-alert-news">
+          <p>
+            <b>Shipping</b>
+            Ecomerce
+          </p>
+        </div>
+        <div class="header-top-actions">
+          @guest
+          @if (Route::has('login'))
+          <a class="" href="{{ route('login') }}">Ingresar</a>
+          @endif
+          @if (Route::has('register'))
+          <a class="" href="{{ route('register') }}">Registrarse</a>
+          @endif
+          @else
+          <ion-icon name="person-outline"></ion-icon>
+          <a id="navbarDropdown" class="" href="{{ route('perfil.edit', auth()->user()->id) }}">
+            {{ Auth::user()->email }}
+          </a>
+          <a class="dropdown-item" href="/cierreSesion">
+            Cerrar Sesión <i class="fa fa-arrow-right"></i>
+          </a>
+          @endguest
+        </div>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container">
+        <a href="/home" class="header-logo">
+          <img src="{{ asset('img/Logo.png') }}" alt="logo" width="120" height="36">
+        </a>
+        <div class="header-search-container">
+          <input type="search" name="search" class="search-field" placeholder="Ingrese el nombre del producto...">
+          <button class="search-btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+        </div>
+        <div class="header-user-actions">
+          <button class="action-btn">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+          <button class="action-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+          <div class="col-md-3 clearfix">
+            <div class="header-ctn">
+              <div class="dropdown">
+                <?php $c = 0; ?>
+                @guest
+                <div class="cart-dropdown">
+                  <div class="cart-list">
+                    <h4>Carrito Vacío</h4>
+                  </div>
+                </div>
+                @else
+                <div class="cart-dropdown">
+                  <div class="cart-list">
+                    @foreach ($detallesCarrito as $detalleCarrito)
+                    @if ($detalleCarrito->idCarrito == $carrito->id)
+                    @foreach ($productos as $producto)
+                    @if ($detalleCarrito->idProducto == $producto->id)
+                    <?php $c++; ?>
+                    <div class="product-widget">
+                      <div class="product-img">
+                        <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="">
+                      </div>
+                      <div class="product-body">
+                        <h3 class="product-name"><a href="#">{{ $producto->name }}</a></h3>
+                        <h4 class="product-price">
+                          <span class="qty">{{ $detalleCarrito->cantidad }}x</span>Bs {{ $detalleCarrito->precio }}
+                        </h4>
+                      </div>
+                      <button class="delete" type="submit" form="delete_{{ $detalleCarrito->id }}" onclick="return confirm('¿Estás seguro de eliminar el registro?')">
+                        <i class="fa fa-close"></i>
+                      </button>
+                      <form action="{{ route('detalleCarrito.destroy', $detalleCarrito->id) }}" id="delete_{{ $detalleCarrito->id }}" method="POST" enctype="multipart/form-data" hidden>
+                        @csrf
+                        @method('DELETE')
+                      </form>
+                    </div>
+                    @endif
+                    @endforeach
+                    @endif
+                    @endforeach
+                    @if ($c == 0)
+                    <h4>Carrito Vacío</h4>
+                    @endif
+                  </div>
+                  <div class="cart-summary">
+                    <small>{{ $c }} Artículo(s) seleccionado(s)</small>
+                    <h5>SUBTOTAL: Bs {{ $carrito->total }}</h5>
+                  </div>
+                  <div class="cart-btns">
+                    <a href="{{ route('detalleCarrito.index') }}">Ver carrito</a>
+                    @if ($c == 0)
+                    <a href="#">Sin productos <i class="fa fa-arrow-circle-right"></i></a>
+                    @else
+                    <a href="{{ route('pagos.index') }}">Verificar <i class="fa fa-arrow-circle-right"></i></a>
+                    @endif
+                  </div>
+                </div>
+                @endguest
+                <button class="action-btn dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                  <ion-icon name="bag-handle-outline"></ion-icon>
+                  <span class="count">{{ $c }}</span>
+                </button>
+              </div>
+              <div class="menu-toggle">
+                <a href="#">
+                  <i class="fa fa-bars"></i>
+                  <span>Menú</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-     <!-- MAIN HEADER -->
-     <div id="header">
-         <!-- container -->
-         <div class="container">
-             <!-- row -->
-             <div class="row">
-                 <!-- LOGO -->
-                 <div class="col-md-3">
-                     <div class="header-logo">
-                         <a href="/home" class="logo">
-                             <img src="{{ asset('img/Ecomercelog.jpg') }}" width=190px>
-                         </a>
-                     </div>
-                 </div>
-                 <!-- /LOGO -->
-                 <!-- SEARCH BAR -->
-                 <div class="col-md-6">
-                     <div class="header-search">
-                         <form>
-                             <select class="input-select">
-                                 <option value="0">All Categories</option>
-                                 <option value="1">Category 01</option>
-                                 <option value="1">Category 02</option>
-                             </select>
-                             <input class="input" placeholder="Search here">
-                             <button class="search-btn">Search</button>
-                         </form>
-                     </div>
-                 </div>
-                 <!-- /SEARCH BAR -->
+      </div>
+    </div>
 
-                 <!-- ACCOUNT -->
-                 <div class="col-md-3 clearfix">
-                     <div class="header-ctn">
-                         <!-- Wishlist -->
-                         <div>
-                             <a href="#">
-                                 <i class="fa fa-heart-o"></i>
-                                 <span>Your Wishlist</span>
-                                 <div class="qty">2</div>
-                             </a>
-                         </div>
-                         <!-- /Wishlist -->
+    <nav id="navigation" class="desktop-navigation-menu">
+      <div class="container">
+        <ul class="desktop-menu-category-list">
+          <li class="menu-category {{ 'home' == Request::is('home*') ? 'active' : '' }}">
+            <a href="/home">Home</a>
+          </li>
+          <li class="menu-category {{ 'cliente/catalogo' == Request::is('cliente/catalogo*') ? 'active' : '' }}">
+            <a href="{{ route('catalogo.index') }}">Catálogo</a>
+          </li>
+          <li class="menu-category {{ 'cliente/categoriaShow' == Request::is('cliente/categoriaShow*') ? 'active' : '' }}">
+            <a href="{{ route('categoriaShow.index') }}">Categorías</a>
+          </li>
+          @auth
+          <li class="menu-category {{ 'cliente/pedidosCliente' == Request::is('cliente/pedidosCliente*') ? 'active' : '' }}">
+            <a href="{{ route('pedidosCliente.index') }}">Pedidos</a>
+          </li>
+          <li class="menu-category {{ 'cliente/AddressClient' == Request::is('cliente/AddressClient*') ? 'active' : '' }}">
+            <a href="{{ url('/cliente/AddressClient') }}">Direcciones</a>
+          </li>
+          @endauth
+        </ul>
+      </div>
+    </nav>
 
-                         <!-- Cart -->
-                         <div class="dropdown">
-                             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                 <i class="fa fa-shopping-cart"></i>
-                                 <span>Your Cart</span>
-                                 <div class="qty">3</div>
-                             </a>
-                             <div class="cart-dropdown">
-                                 <div class="cart-list">
-                                     <div class="product-widget">
-                                         <div class="product-img">
-                                             <img src="./img/product01.png" alt="">
-                                         </div>
-                                         <div class="product-body">
-                                             <h3 class="product-name"><a href="#">product name goes
-                                                     here</a></h3>
-                                             <h4 class="product-price"><span class="qty">1x</span>$980.00
-                                             </h4>
-                                         </div>
-                                         <button class="delete"><i class="fa fa-close"></i></button>
-                                     </div>
+    <div class="mobile-bottom-navigation">
+      <button class="action-btn" data-mobile-menu-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+      <button class="action-btn">
+        <ion-icon name="bag-handle-outline"></ion-icon>
+        <span class="count">0</span>
+      </button>
+      <button class="action-btn">
+        <ion-icon name="home-outline"></ion-icon>
+      </button>
+      <button class="action-btn">
+        <ion-icon name="heart-outline"></ion-icon>
+        <span class="count">0</span>
+      </button>
+      <button class="action-btn" data-mobile-menu-open-btn>
+        <ion-icon name="grid-outline"></ion-icon>
+      </button>
+    </div>
 
-                                     <div class="product-widget">
-                                         <div class="product-img">
-                                             <img src="./img/product02.png" alt="">
-                                         </div>
-                                         <div class="product-body">
-                                             <h3 class="product-name"><a href="#">product name goes
-                                                     here</a></h3>
-                                             <h4 class="product-price"><span class="qty">3x</span>$980.00
-                                             </h4>
-                                         </div>
-                                         <button class="delete"><i class="fa fa-close"></i></button>
-                                     </div>
-                                 </div>
-                                 <div class="cart-summary">
-                                     <small>3 Item(s) selected</small>
-                                     <h5>SUBTOTAL: $2940.00</h5>
-                                 </div>
-                                 <div class="cart-btns">
-                                     <a href="#">View Cart</a>
-                                     <a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
-                                 </div>
-                             </div>
-                         </div>
-                         <!-- /Cart -->
+    <nav class="mobile-navigation-menu  has-scrollbar" data-mobile-menu>
 
-                         <!-- Menu Toogle -->
-                         <div class="menu-toggle">
-                             <a href="#">
-                                 <i class="fa fa-bars"></i>
-                                 <span>Menu</span>
-                             </a>
-                         </div>
-                         <!-- /Menu Toogle -->
-                     </div>
-                 </div>
-                 <!-- /ACCOUNT -->
-             </div>
-             <!-- row -->
-         </div>
-         <!-- container -->
-     </div>
-     <!-- /MAIN HEADER -->
- </header>
- <!-- /HEADER -->
+      <div class="menu-top">
+        <h2 class="menu-title">Menu</h2>
 
- <!-- NAVIGATION -->
- <nav id="navigation">
-     <!-- container -->
-     <div class="container">
-         <!-- responsive-nav -->
-         <div id="responsive-nav">
-             <!-- NAV -->
-             <ul class="main-nav nav navbar-nav">
-                 <li class="{{ 'home' == Request::is('home*') ? 'active' : '' }}"><a href="/home">Home</a></li>
-                 <li class="{{ 'cliente/catalogo' == Request::is('cliente/catalogo*') ? 'active' : '' }}"><a
-                         href="cliente/catalogo">Productos</a></li>
-                 <li><a href="#">Categorias</a></li>
-                 <li><a href="#">Laptops</a></li>
-                 <li><a href="#">Smartphones</a></li>
-                 <li><a href="#">Cameras</a></li>
-                 <li><a href="#">Accessories</a></li>
-             </ul>
-             <!-- /NAV -->
-         </div>
-         <!-- /responsive-nav -->
-     </div>
-     <!-- /container -->
- </nav>
- <!-- /NAVIGATION -->
+        <button class="menu-close-btn" data-mobile-menu-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+
+      <ul class="mobile-menu-category-list">
+
+        <li class="menu-category {{ 'home' == Request::is('home*') ? 'active' : '' }}">
+          <a href="/home">Home</a>
+        </li>
+        <li class="menu-category {{ 'cliente/catalogo' == Request::is('cliente/catalogo*') ? 'active' : '' }}">
+          <a href="{{ route('catalogo.index') }}">Catálogo</a>
+        </li>
+        <li class="menu-category {{ 'cliente/categoriaShow' == Request::is('cliente/categoriaShow*') ? 'active' : '' }}">
+          <a href="{{ route('categoriaShow.index') }}">Categorías</a>
+        </li>
+        @auth
+        <li class="menu-category {{ 'cliente/pedidosCliente' == Request::is('cliente/pedidosCliente*') ? 'active' : '' }}">
+          <a href="{{ route('pedidosCliente.index') }}">Pedidos</a>
+        </li>
+        <li class="menu-category {{ 'cliente/AddressClient' == Request::is('cliente/AddressClient*') ? 'active' : '' }}">
+          <a href="{{ url('/cliente/AddressClient') }}">Direcciones</a>
+        </li>
+        @endauth
+      </ul>
+
+      <div class="menu-bottom">
+
+        <ul class="menu-category-list">
+
+          <li class="menu-category">
+
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Language</p>
+
+              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">English</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Espa&ntilde;ol</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">Fren&ccedil;h</a>
+              </li>
+
+            </ul>
+
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Currency</p>
+              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">USD &dollar;</a>
+              </li>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">EUR &euro;</a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <ul class="menu-social-container">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </nav>
+
+
+  </header>

@@ -2,117 +2,69 @@
 
 namespace Database\Seeders;
 
-use App\Models\marca;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Marca;
 use Illuminate\Database\Seeder;
 
 class MarcaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        marca::create([
-            'nombre' => 'Adata'
-        ]);
+  /**
+   * Run the database seeds.
+   *
+   * @return void
+   */
+  public function run()
+  {
+    $marcas = [
+      'Puma',
+      'Nike',
+      'Adidas',
+      'Reebok',
+      'Under Armour',
+      'New Balance',
+      'Converse',
+      'Levi\'s',
+      'H&M',
+      'Zara',
+      'Uniqlo',
+      'Gap',
+      'Tommy Hilfiger',
+      'Calvin Klein',
+      'Ralph Lauren',
+      'Gucci',
+      'Prada',
+      'Chanel',
+      'Versace',
+      'Louis Vuitton',
+      'Burberry',
+      'Fendi',
+      'Armani',
+      'Dolce & Gabbana',
+      'Hugo Boss',
+      'Diesel',
+      'Balenciaga',
+      'Givenchy',
+      'Valentino',
+      'Hermès',
+      'Lacoste',
+      'Superdry',
+      'Guess',
+      'Patagonia',
+      'The North Face',
+      'Columbia',
+      'Fila',
+      'Champion',
+      'Vans',
+      'Timberland',
+      'Quiksilver',
+      'Billabong',
+      'Roxy',
+      'Rip Curl'
+    ];
 
-        marca::create([
-            'nombre' => 'AMD'
-        ]);
-
-        marca::create([
-            'nombre' => 'AOC'
-        ]);
-
-        marca::create([
-            'nombre' => 'Asrock'
-        ]);
-
-        marca::create([
-            'nombre' => 'Asus'
-        ]);
-
-        marca::create([
-            'nombre' => 'Corsair'
-        ]);
-
-        marca::create([
-            'nombre' => 'Dell'
-        ]);
-
-        marca::create([
-            'nombre' => 'Encore'
-        ]);
-
-        marca::create([
-            'nombre' => 'Epson'
-        ]);
-
-        marca::create([
-            'nombre' => 'Genius'
-        ]);
-
-        marca::create([
-            'nombre' => 'Gigabyte'
-        ]);
-
-        marca::create([
-            'nombre' => 'Hp'
-        ]);
-
-        marca::create([
-            'nombre' => 'Lenovo'
-        ]);
-
-        marca::create([
-            'nombre' => 'Huawei'
-        ]);
-
-        marca::create([
-            'nombre' => 'Intel'
-        ]);
-
-        marca::create([
-            'nombre' => 'Kingston'
-        ]);
-
-        marca::create([
-            'nombre' => 'Logitech'
-        ]);
-
-        marca::create([
-            'nombre' => 'Microsoft'
-        ]);
-
-        marca::create([
-            'nombre' => 'MSI'
-        ]);
-
-        marca::create([
-            'nombre' => 'Samsung'
-        ]);
-
-        marca::create([
-            'nombre' => 'Seagate'
-        ]);
-
-        marca::create([
-            'nombre' => 'Sony'
-        ]);
-
-        marca::create([
-            'nombre' => 'Toshiba'
-        ]);
-
-        marca::create([
-            'nombre' => 'Tp-Link'
-        ]);
-
-        marca::create([
-            'nombre' => 'Crucial'
-        ]);
+    foreach ($marcas as $nombre) {
+      Marca::create([
+        'nombre' => $nombre,
+      ]);
     }
+  }
 }

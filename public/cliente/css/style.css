@@ -287,6 +287,27 @@ textarea.input {
   max-height: 800px;
 }
 
+
+    .quantity-input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .quantity-input input {
+      width: 60px;
+      height: 40px;
+      text-align: center;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      padding: 5px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+  
+  
+  
+    
 /*----------------------------*\
 	Section
 \*----------------------------*/
@@ -969,14 +990,10 @@ textarea.input {
 }
 
 .product .product-body .product-btns>button {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  background: transparent;
-  border: none;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
+  display: inline-block;
+    margin-right: 15px;
+    position: relative;
+
 }
 
 .product .product-body .product-btns>button:hover {
@@ -1473,6 +1490,7 @@ textarea.input {
 .product-details .product-rating {
   display: inline-block;
   margin-right: 15px;
+  
 }
 
 .product-details .product-rating>i {
@@ -1594,12 +1612,14 @@ textarea.input {
 
 .product-details .product-links {
   margin-top: 15px;
+  color: #FFF;
 }
 
 .product-details .product-links li {
   display: inline-block;
   text-transform: uppercase;
   font-size: 12px;
+
 }
 
 .product-details .product-links li+li {

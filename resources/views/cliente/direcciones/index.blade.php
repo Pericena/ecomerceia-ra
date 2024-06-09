@@ -1,6 +1,7 @@
 @extends('cliente.cliente')
 
 @section('content')
+
     <!-- BREADCRUMB -->
     <div id="breadcrumb" class="section">
         <!-- container -->
