@@ -29,7 +29,7 @@ class CarritoCliente extends Controller
      */
     public function create()
     {
-        //
+        //metodo create
     }
 
     /**
