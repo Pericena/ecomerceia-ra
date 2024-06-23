@@ -1,66 +1,69 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Proyecto Software 2
+#### SOFTWARE E-COMMERCE PARA TIENDAS DE ROPA CON INTEGRACIÓN DE INTELIGENCIA ARTIFICIAL Y REALIDAD AUMENTADA EN LA EXPERIENCIA DE COMPRA
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este software e-commerce con integración de IA y RA está diseñado para revolucionar la experiencia de compra en tiendas de ropa, haciendo que sea más interactiva, personalizada y eficiente.
+![Vista de la Aplicación](screencapture/screencapture1.png)
 
-## About Laravel
+## Documentación
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Documento del Proyecto word](https://onedrive.live.com/edit?id=49BFED77B556DEF2!125773&resid=49BFED77B556DEF2!125773&ithint=file%2cdocx&authkey=!ACZ6M5lSlhtvmQ4&wdo=2&cid=49bfed77b556def2)
+- [Gestión de Proyecto en Jira](https://supersoftware2.blogspot.com/)
+- [Pagina Web Corporativa Super](https://supersoftware2.blogspot.com/)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tecnologías Utilizadas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Chatbot
+- **Dialogflow**: Utilizado para el bot.
 
-## Learning Laravel
+### Base de Datos
+- **MySQL**: Utilizado con Laravel y Express
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Gestión de Archivos
+- **Gestor de Archivos en la Base de Datos** : Firebase
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Contenedores
+- **Docker**
 
-## Laravel Sponsors
+### Nube
+- **Google cloud**
+- **Railway**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Diagrama de despliegue general 
+![Diagrama de despliegue general ](screencapture/screencapture5.png) <!-- Reemplazar con la URL de tu imagen -->
+*Diagrama de despliegue general *
 
-### Premium Partners
+## Modelo Conceptual
+![Modelo Conceptual ](screencapture/screencapture6.png) <!-- Reemplazar con la URL de tu imagen -->
+*Modelo Conceptual *
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Repositorios y Herramientas
 
-## Contributing
+- **Repositorio en GitHub**: [swpresupuesto-ia](https://github.com/Pericena/ecomerceia-ra)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Manual de usuario
+- [Descargar la App](https://drive.google.com/file/d/1ezbsAwMqPHzvZD14QJBCWuZ0PcnHwmIL/view)
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Anexos Imágenes del Proyecto
+![Interfaz Principal](screencapture/screencapture2.png) <!-- Reemplazar con la URL de tu imagen -->
+*Interfaz principal del administrador*
 
-## Security Vulnerabilities
+![Dashboard](screencapture/screencapture3.png)
+![Dashboard](screencapture/screencapture4.png)
+ <!-- Reemplazar con la URL de tu imagen -->
+*Vista del dashboard de inteligencia de negocio*
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Contribución
+Clona el repositorio:
+    ```bash
+    git clone https://github.com/Pericena/ecomerceia-ra
+    ```
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# Ecomerce
-Ecomerce
+## Equipo
+
+- **Pericena Luishiño**
+- **Suarez David** 
+---
+
+Si tienes alguna pregunta o comentario, por favor abre un issue en el repositorio o contacta a uno de los miembros del equipo.
