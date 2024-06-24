@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Marca;
+use App\Models\marca;
 use Illuminate\Database\Seeder;
 
 class MarcaSeeder extends Seeder
