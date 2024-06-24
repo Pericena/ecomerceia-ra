@@ -106,7 +106,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('/administrador/empleados', EmpleadoController::class);
     Route::resource('/administrador/clientes', ClienteController::class);
     Route::resource('/perfil', PerfilController::class);
-    Route::resource('/password', PasswordController::class);
+    // Route::resource('/password', PasswordController::class);
     Route::resource('/administrador/bitacoras', BitacoraController::class);
     Route::resource('/administrador/proveedor', ProveedorController::class);
     Route::resource('/administrador/carritosClientes', CarritoCliente::class);
