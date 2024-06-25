@@ -21,7 +21,7 @@ class AddressClientSeeder extends Seeder
             'city' => 'Santa Cruz De La Sierra',
             'department' => 'Santa Cruz',
             'country' => 'Bolivia',
-            'postal_code' => '00000',
+            'postal_code' => '000000',
             'id_client' => '6',
         ]);
 

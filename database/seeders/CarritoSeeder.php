@@ -8,32 +8,37 @@ use Illuminate\Database\Seeder;
 
 class CarritoSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     * 
-     * @return void
-     */
-    public function run()
-    {
-        Carrito::create([
-            'fechaHora' => date('Y-m-d H:i:s'),
-            'estado' => '1',
-            'total' => '0',
-            'idCliente' => '6'
-        ]);
+  public function run()
+  {
+    $carritos = [
+      [
+        'fechaHora' => now()->subDays(1),
+        'estado' => '1',
+        'total' => '150',
+        'idCliente' => '6'
+      ],
+      [
+        'fechaHora' => now()->subHours(12),
+        'estado' => '1',
+        'total' => '280',
+        'idCliente' => '7'
+      ],
+      [
+        'fechaHora' => now()->subMinutes(30),
+        'estado' => '0',
+        'total' => '0',
+        'idCliente' => '8'
+      ],
+      [
+        'fechaHora' => now()->subDays(2),
+        'estado' => '1',
+        'total' => '90',
+        'idCliente' => '6'
+      ],
+    ];
 
-        Carrito::create([
-            'fechaHora' => date('Y-m-d H:i:s'),
-            'estado' => '1',
-            'total' => '0',
-            'idCliente' => '7'
-        ]);
-
-        Carrito::create([
-            'fechaHora' => date('Y-m-d H:i:s'),
-            'estado' => '1',
-            'total' => '0',
-            'idCliente' => '8'
-        ]);
+    foreach ($carritos as $carritoData) {
+      Carrito::create($carritoData);
     }
+  }
 }
