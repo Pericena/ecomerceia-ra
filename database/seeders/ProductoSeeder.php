@@ -20,7 +20,9 @@ class ProductoSeeder extends Seeder
         'descripcion' => 'Polera PUMA con logo pequeño en el pecho, ideal para uso diario.',
         'stock' => 27,
         'precioUnitario' => 150.00,
-        'imagen' => 'polera-2.glb',
+        'imagen' => '1.png',
+        'video' => 'video-polera-1.mp4', // Ejemplo de video
+        'modelo' => 'polera-1.glb', // Ejemplo de archivo modelo
         'idcategoria' => 1,
         'idmarca' => 1,
         'idpromocion' => 5,
@@ -30,7 +32,9 @@ class ProductoSeeder extends Seeder
         'descripcion' => 'Polera básica ideal para cualquier ocasión.',
         'stock' => 16,
         'precioUnitario' => 140.00,
-        'imagen' => 'polera-2.glb',
+        'imagen' => '2.png',
+        'video' => 'video-polera-1.mp4', // Ejemplo de video
+        'modelo' => 'polera-9.glb', // Ejemplo de archivo modelo
         'idcategoria' => 1,
         'idmarca' => 2,
       ],
@@ -39,7 +43,9 @@ class ProductoSeeder extends Seeder
         'descripcion' => 'Polera de algodón en color rojo, cómoda y ligera.',
         'stock' => 23,
         'precioUnitario' => 70.00,
-        'imagen' => 'polera-2.glb',
+        'imagen' => '3.png',
+        'video' => 'video-polera-1.mp4', // Ejemplo de video
+        'modelo' => 'polera-2.glb', // Ejemplo de archivo modelo
         'idcategoria' => 1,
         'idmarca' => 3,
         'idpromocion' => 1,
@@ -49,7 +55,9 @@ class ProductoSeeder extends Seeder
         'descripcion' => 'Polera de algodón en color negro, perfecta para cualquier ocasión.',
         'stock' => 40,
         'precioUnitario' => 70.00,
-        'imagen' => 'polera-1.glb',
+        'imagen' => '3.png',
+        'video' => 'video-polera-1.mp4', // Ejemplo de video
+        'modelo' => 'polera-3.glb', // Ejemplo de archivo modelo
         'idcategoria' => 1,
         'idmarca' => 4,
       ],
@@ -58,7 +66,9 @@ class ProductoSeeder extends Seeder
         'descripcion' => 'Polera de algodón en color blanco, ideal para uso diario.',
         'stock' => 45,
         'precioUnitario' => 80.00,
-        'imagen' => 'polera-4.glb',
+        'imagen' => '4.png',
+        'video' => 'video-polera-1.mp4', // Ejemplo de video
+        'modelo' => 'polera-4.glb', // Ejemplo de archivo modelo
         'idcategoria' => 1,
         'idmarca' => 5,
         'idpromocion' => 4,
@@ -68,7 +78,9 @@ class ProductoSeeder extends Seeder
         'descripcion' => 'Polera deportiva en color azul, adecuada para actividades físicas.',
         'stock' => 50,
         'precioUnitario' => 95.00,
-        'imagen' => 'polera-5.glb',
+        'imagen' => '5.png',
+        'video' => 'video-polera-1.mp4', // Ejemplo de video
+        'modelo' => 'polera-5.glb', // Ejemplo de archivo modelo
         'idcategoria' => 2,
         'idmarca' => 1,
       ],
@@ -77,7 +89,9 @@ class ProductoSeeder extends Seeder
         'descripcion' => 'Polera casual en color verde, perfecta para el día a día.',
         'stock' => 30,
         'precioUnitario' => 85.00,
-        'imagen' => 'polera-6.glb',
+        'imagen' => '6.png',
+        'video' => 'video-polera-1.mp4', // Ejemplo de video
+        'modelo' => 'polera-6.glb', // Ejemplo de archivo modelo
         'idcategoria' => 3,
         'idmarca' => 2,
       ],
@@ -86,7 +100,9 @@ class ProductoSeeder extends Seeder
         'descripcion' => 'Polera de manga larga en color gris, cómoda y versátil.',
         'stock' => 35,
         'precioUnitario' => 90.00,
-        'imagen' => 'polera-7.glb',
+        'imagen' => '7.png',
+        'video' => 'video-polera-1.mp4', // Ejemplo de video
+        'modelo' => 'polera-7.glb', // Ejemplo de archivo modelo
         'idcategoria' => 4,
         'idmarca' => 3,
       ],
@@ -95,7 +111,9 @@ class ProductoSeeder extends Seeder
         'descripcion' => 'Polera con estampado moderno, ideal para un look casual.',
         'stock' => 25,
         'precioUnitario' => 110.00,
-        'imagen' => 'polera-8.glb',
+        'imagen' => '8.png',
+        'video' => 'video-polera-1.mp4', // Ejemplo de video
+        'modelo' => 'polera-7.glb', // Ejemplo de archivo modelo
         'idcategoria' => 5,
         'idmarca' => 4,
       ],
@@ -104,7 +122,9 @@ class ProductoSeeder extends Seeder
         'descripcion' => 'Polera básica en color blanco, esencial en cualquier guardarropa.',
         'stock' => 60,
         'precioUnitario' => 60.00,
-        'imagen' => 'polera-9.glb',
+        'imagen' => '9.png',
+        'video' => 'video-polera-1.mp4', // Ejemplo de video
+        'modelo' => 'polera-9.glb', // Ejemplo de archivo modelo
         'idcategoria' => 1,
         'idmarca' => 5,
       ],

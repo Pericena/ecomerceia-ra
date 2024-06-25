@@ -18,7 +18,7 @@ class producto extends Model
     'precioUnitario',
     'imagen',
     'video',
-    '3d',
+    'modelo',
     'idcategoria',
     'idmarca',
   ];
