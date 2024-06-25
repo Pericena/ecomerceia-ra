@@ -1,3 +1,9 @@
+   <link rel="text/css" href="{{ ('assets/css/style-prefix.css') }}">
+
+   <link rel="text/css" href="{{ ('assets/css/bootstrap.min.css') }}">
+
+
+  
   <div class="banner">
     <div class="container">
       <div class="slider-container has-scrollbar">

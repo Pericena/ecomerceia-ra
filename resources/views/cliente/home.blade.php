@@ -1,6 +1,8 @@
+    <link rel="stylesheet" href="./assets/css/style-prefix.css">
+
+
 @extends('cliente.cliente')
 @section('content')
-
 
 <div class="container my-4">
   <div class="row">

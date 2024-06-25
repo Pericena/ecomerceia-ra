@@ -1,23 +1,18 @@
 <div class="product-featured">
-
   <h2 class="title">Oferta</h2>
-
   <div class="showcase-wrapper has-scrollbar">
     <?php $a = 0; ?>
     @foreach ($productos as $producto)
     <?php $a = $a + 1; ?>
-
     <div class="showcase-container">
       <div class="showcase">
-
         <div class="showcase-banner">
-          <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+          {{-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
           <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->imagen) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar width="500px" height="200px">
-          </model-viewer>
+          </model-viewer> --}}
+          <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="" width="450" height="350">
         </div>
-
         <div class="showcase-content">
-
           <div class="showcase-rating">
             <ion-icon name="star"></ion-icon>
             <ion-icon name="star"></ion-icon>
@@ -25,7 +20,6 @@
             <ion-icon name="star-outline"></ion-icon>
             <ion-icon name="star-outline"></ion-icon>
           </div>
-
           @foreach ($categorias as $categoria)
           @if ($categoria->id == $producto->idcategoria)
           <a href="#">
@@ -33,11 +27,9 @@
           </a>
           @endif
           @endforeach
-
           <p class="showcase-desc">
             {{ $producto->name }}
           </p>
-
           <div class="price-box">
             @if ($producto->idpromocion != '')
             <h4 class="price">Bs
@@ -52,7 +44,6 @@
           <button class="add-cart-btn" form="create{{ $a }}">
             <i class="fa fa-shopping-cart"></i> Añadir al carrito
           </button>
-
           <div class="showcase-status">
             <div class="wrapper">
               <p>Descuento:
@@ -72,45 +63,33 @@
             </div>
             <div class="showcase-status-bar"></div>
           </div>
-
           <div class="countdown-box">
-
             <p class="countdown-desc">
               ¡APRESÚRATE! LA OFERTA TERMINA EN:
             </p>
-
             <div class="countdown">
-
               <div class="countdown-content">
                 <p class="display-number">360</p>
                 <p class="display-text">Days</p>
               </div>
-
               <div class="countdown-content">
                 <p class="display-number">24</p>
                 <p class="display-text">Hours</p>
               </div>
-
               <div class="countdown-content">
                 <p class="display-number">59</p>
                 <p class="display-text">Min</p>
               </div>
-
               <div class="countdown-content">
                 <p class="display-number">00</p>
                 <p class="display-text">Sec</p>
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     </div>
     @endforeach
   </div>
-
 </div>
 

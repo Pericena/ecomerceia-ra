@@ -98,52 +98,6 @@
 @endsection
 
 @section('scripts')
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  var ctx1 = document.getElementById('ventasDiariasChart').getContext('2d');
-  var ventasDiariasChart = new Chart(ctx1, {
-    type: 'line'
-    , data: {
-      labels: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
-      , datasets: [{
-        label: 'Ventas Diarias ($)'
-        , data: [1500, 2200, 1800, 2500, 2000, 2800, 3000]
-        , borderColor: '#3c8dbc'
-        , borderWidth: 2
-        , fill: false
-      }]
-    }
-    , options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
 
-  var ctx2 = document.getElementById('usuariosPorMesChart').getContext('2d');
-  var usuariosPorMesChart = new Chart(ctx2, {
-    type: 'bar'
-    , data: {
-      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio']
-      , datasets: [{
-        label: 'Usuarios Registrados'
-        , data: [50, 60, 55, 70, 65, 80]
-        , backgroundColor: '#00a65a'
-        , borderColor: '#00a65a'
-        , borderWidth: 1
-      }]
-    }
-    , options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-
-</script>
 @endsection
 

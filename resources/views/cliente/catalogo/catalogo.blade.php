@@ -1,5 +1,6 @@
 @extends('cliente.cliente')
 @yield('content')
+    <link rel="stylesheet" href="./assets/css/style-prefix.css">
 
 @section('content')
 <!-- BREADCRUMB -->
@@ -41,12 +42,10 @@
             <div class="product-card">
               <div class="card-banner img-holder" style="--width: 160; --height: 260;background-color: rgb(255, 255, 255);">
                 <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar width="150px" height="150px">
-
-
-
                 </model-viewer>
 
-                <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="">
+                {{-- <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="" width="150px" height="150px"> --}}
+
 
               </div>
             </div>
