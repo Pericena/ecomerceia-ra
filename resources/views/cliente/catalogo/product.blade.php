@@ -8,15 +8,8 @@
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 <script src="{{ asset('js/gesture-detector.js') }}"></script>
 <script src="{{ asset('js/gesture-handler.js') }}"></script>
-  <link type="text/css" rel="stylesheet" href="{{ asset('cliente/css/style.css') }}" />
- <link type="text/css" rel="stylesheet" href="{{ ('cliente/css/style-prefix.css') }}">
-
-
-
-
-
-
-
+<link type="text/css" rel="stylesheet" href="{{ asset('cliente/css/style.css') }}" />
+<link type="text/css" rel="stylesheet" href="{{ ('cliente/css/style-prefix.css') }}">
 
 
 <div class="popup" id="vrPopup">
@@ -33,11 +26,11 @@
         <img src="{{ asset('cliente/img/qr.png') }}" alt="Código QR" id="qrCode" width="150" height="150">
         <br>
         <p>Descargar</p>
-<br>
+        <br>
 
-                <a href="https://pericena.github.io/declaracion/datos/index3.html">
-                  Utilizar el Dispositivo movil
-                </a>
+        <a href="https://pericena.github.io/declaracion/datos/index3.html">
+          Utilizar el Dispositivo movil
+        </a>
 
       </a>
 
@@ -227,7 +220,7 @@
           </a-scene>
           {{-- <audio autoplay>
             <source src="{{ asset('js/music.mp3') }}" type="audio/mpeg">
-            Tu navegador no soporta el elemento de audio.
+          Tu navegador no soporta el elemento de audio.
           </audio> --}}
         </div>
       </div>
