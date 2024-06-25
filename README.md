@@ -16,7 +16,7 @@ Este software e-commerce con integración de IA y RA está diseñado para revolu
 - **Dialogflow**: Utilizado para el bot.
 
 ### Base de Datos
-- **MySQL**: Utilizado con Laravel y Express
+- **Laravel**: Utilizado con Laravel
 
 ### Gestión de Archivos
 - **Gestor de Archivos en la Base de Datos** : Firebase
@@ -25,16 +25,8 @@ Este software e-commerce con integración de IA y RA está diseñado para revolu
 - **Docker**
 
 ### Nube
-- **Google cloud**
-- **Railway**
+- **Heroku**
 
-## Diagrama de despliegue general 
-![Diagrama de despliegue general ](screencapture/screencapture5.png) <!-- Reemplazar con la URL de tu imagen -->
-*Diagrama de despliegue general *
-
-## Modelo Conceptual
-![Modelo Conceptual ](screencapture/screencapture6.png) <!-- Reemplazar con la URL de tu imagen. -->
-*Modelo Conceptual *
 
 ## Repositorios y Herramientas
 

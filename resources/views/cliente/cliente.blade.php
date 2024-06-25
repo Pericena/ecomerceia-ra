@@ -48,6 +48,59 @@
           @yield('content')
   
 
+<div id="cookie-banner" class="cookie-banner">
+  <p>Utilizamos cookies para asegurarnos de que obtengas la mejor experiencia en nuestro sitio web. Al continuar navegando, aceptas nuestro uso de cookies.
+    <a href="https://supersoftware2.blogspot.com/2024/06/terminos-y-condiciones.html" target="_blank">Más información</a>.</p>
+  <button id="accept-cookies" class="btn2">Aceptar</button>
+</div>
+
+
+
+              <style>
+                /* styles.css */
+
+                .cookie-banner {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+                text-align: center;
+                padding: 15px;
+                font-size: 14px;
+                z-index: 1000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                }
+
+                .cookie-banner p {
+                margin: 0 0 10px 0;
+                }
+
+                .cookie-banner a {
+                color: #ffc107;
+                text-decoration: underline;
+                }
+
+                .btn2 {
+                background-color: #ffc107;
+                border: none;
+                padding: 10px 20px;
+                color: black;
+                font-size: 14px;
+                cursor: pointer;
+                border-radius: 5px;
+                }
+
+                .btn2:hover {
+                background-color: #e0a800;
+                }
+
+
+              </style>
+
   <footer>
     <div class="footer-category">
       <div class="container">
@@ -212,23 +265,9 @@
                       </div>
                     </div>
         </footer>
-
-
-
-
-   <script src="{{ asset('./assets/js/script.js') }}"></script>
-
-
-  
-  
-  
+   <script src="{{ asset('./assets/js/script.js') }}"></script>  
    <!-- jQuery Plugins -->
- 
- 
- 
- 
- 
- 
+
    <script src="{{ asset('cliente/js/jquery.min.js') }}"></script>
   <script src="{{ asset('cliente/js/bootstrap.min.js') }}"></script>
   <script src="{{ asset('cliente/js/slick.min.js') }}"></script>
@@ -250,6 +289,48 @@
 
 </script>
 <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var cookieBanner = document.getElementById("cookie-banner");
+        var acceptCookiesBtn = document.getElementById("accept-cookies");
+
+        // Función para establecer una cookie
+        function setCookie(name, value, days) {
+          var expires = "";
+          if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+          }
+          document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        // Función para obtener una cookie
+        function getCookie(name) {
+          var nameEQ = name + "=";
+          var ca = document.cookie.split(';');
+          for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+          }
+          return null;
+        }
+
+        // Verificar si la cookie de aceptación de cookies está establecida
+        if (!getCookie("acceptCookies")) {
+          cookieBanner.style.display = "flex";
+        }
+
+        // Manejar el clic en el botón de aceptación de cookies
+        acceptCookiesBtn.addEventListener("click", function() {
+          setCookie("acceptCookies", "true", 365);
+          cookieBanner.style.display = "none";
+        });
+      });
+
+    </script>
 
 </html>
 
