@@ -33,7 +33,7 @@ Este software e-commerce con integración de IA y RA está diseñado para revolu
 *Diagrama de despliegue general *
 
 ## Modelo Conceptual
-![Modelo Conceptual ](screencapture/screencapture6.png) <!-- Reemplazar con la URL de tu imagen -->
+![Modelo Conceptual ](screencapture/screencapture6.png) <!-- Reemplazar con la URL de tu imagen. -->
 *Modelo Conceptual *
 
 ## Repositorios y Herramientas
