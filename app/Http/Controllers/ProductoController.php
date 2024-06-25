@@ -68,6 +68,21 @@ class ProductoController extends Controller
             $file->move('public/img/', $filename);
             $producto->imagen = $filename;
         }
+    // Manejo de video
+    if ($request->hasFile('video')) {
+      $video = $request->file('video');
+      $videoFilename = time() . '.' . $video->getClientOriginalExtension();
+      $video->storeAs('public/videos', $videoFilename);
+      $producto->video = $videoFilename;
+    }
+    // Manejo de modelos 3D
+    if ($request->hasFile('3d')) {
+      $modelo3D = $request->file('3d');
+      $modelo3DFilename = time() . '.' . $modelo3D->getClientOriginalExtension();
+      $modelo3D->storeAs('public/3d', $modelo3DFilename);
+      $producto->modelo_3d = $modelo3DFilename;
+    }
+    
         if ($request->idpromocion != '') {
             $producto->idpromocion = $request->idpromocion;
         }
