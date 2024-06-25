@@ -27,15 +27,29 @@
     <center>
       <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar width="400px" height="400px">
       </model-viewer>
+
+
       <a href="{{ asset('cliente/img/qr.png') }}" download="hiro.png" id="downloadLink">
         <img src="{{ asset('cliente/img/qr.png') }}" alt="Código QR" id="qrCode" width="150" height="150">
         <br>
         <p>Descargar</p>
+<br>
+
+                <a href="https://pericena.github.io/declaracion/datos/index3.html">
+                  Utilizar el Dispositivo movil
+                </a>
+
       </a>
+
+
+
+
+
     </center>
     <button class="btbaok" onclick="closePopup()"><i class='bx bxs-camera bx-md'></i></button>
   </div>
 </div>
+
 
 <!-- Agregar una tarjeta de instrucciones de movimiento -->
 <div class="card">
@@ -211,16 +225,17 @@
             </a-marker>
             <a-entity camera></a-entity>
           </a-scene>
-          <audio autoplay>
+          {{-- <audio autoplay>
             <source src="{{ asset('js/music.mp3') }}" type="audio/mpeg">
             Tu navegador no soporta el elemento de audio.
-          </audio>
+          </audio> --}}
         </div>
       </div>
       <div class="col-md-2 col-md-pull-5">
-        <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar style="width: 100%; height: 400px;">
+        {{-- <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar style="width: 100%; height: 400px;">
+        </model-viewer> --}}
+        <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="" width="200" height="200">
 
-        </model-viewer>
       </div>
       <div class="col-md-5" style="color: #fff">
         <div class="product-details">
