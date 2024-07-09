@@ -1,3 +1,10 @@
+  <link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/cliente/css/style.css" />
+
+
+
+  <link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/style-prefix.css">
+
+
 @extends('cliente.cliente')
 @section('content')
     <!-- BREADCRUMB -->

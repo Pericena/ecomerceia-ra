@@ -1,13 +1,13 @@
-   <link rel="text/css" href="{{ ('assets/css/style-prefix.css') }}">
+   <link rel="text/css" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/style-prefix.css">
 
-   <link rel="text/css" href="{{ ('assets/css/bootstrap.min.css') }}">
+   <link rel="text/css" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/bootstrap.min.css">
+
 
 
   
   <div class="banner">
     <div class="container">
       <div class="slider-container has-scrollbar">
-
         <div class="slider-item">
           <img src="./assets/images/banner-1.jpg" alt="última moda para mujeres" class="banner-img">
           <div class="banner-content">

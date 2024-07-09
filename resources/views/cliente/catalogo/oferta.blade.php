@@ -1,3 +1,10 @@
+  <link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/cliente/css/style.css" />
+
+
+
+  <link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/style-prefix.css">
+
+
 <div class="product-featured">
   <h2 class="title">Oferta</h2>
   <div class="showcase-wrapper has-scrollbar">
@@ -94,7 +101,7 @@
 </div>
 
 
-    <div class="container">
+    {{-- <div class="container">
       <h1>Generador de Outfit</h1>
       <form id="outfit-form">
         <label for="skin-color">Selecciona tu color de piel:</label>
@@ -118,125 +125,6 @@
         <h2>Tu Outfit</h2>
         <div id="outfit"></div>
       </div>
-    </div>
+    </div> --}}
 
-
-    <script>
-      // script.js
-      const outfitForm = document.getElementById('outfit-form');
-      const outfitDisplay = document.getElementById('outfit');
-
-      const outfits = {
-        claro: {
-          camiseta: [{
-              name: 'Camiseta Blanca'
-              , image: 'img/camiseta_blanca.png'
-            }
-            , {
-              name: 'Camiseta Azul'
-              , image: 'img/camiseta_azul.png'
-            }
-          ]
-          , pantalon: [{
-              name: 'Pantalón Negro'
-              , image: 'img/pantalon_negro.png'
-            }
-            , {
-              name: 'Pantalón Beige'
-              , image: 'img/pantalon_beige.png'
-            }
-          ]
-          , zapatos: [{
-              name: 'Zapatos Negros'
-              , image: 'img/zapatos_negros.png'
-            }
-            , {
-              name: 'Zapatos Blancos'
-              , image: 'img/zapatos_blancos.png'
-            }
-          ]
-        }
-        , medio: {
-          camiseta: [{
-              name: 'Camiseta Verde'
-              , image: 'img/camiseta_verde.png'
-            }
-            , {
-              name: 'Camiseta Gris'
-              , image: 'img/camiseta_gris.png'
-            }
-          ]
-          , pantalon: [{
-              name: 'Pantalón Azul'
-              , image: 'img/pantalon_azul.png'
-            }
-            , {
-              name: 'Pantalón Marrón'
-              , image: 'img/pantalon_marron.png'
-            }
-          ]
-          , zapatos: [{
-              name: 'Zapatos Marrones'
-              , image: 'img/zapatos_marrones.png'
-            }
-            , {
-              name: 'Zapatos Grises'
-              , image: 'img/zapatos_grises.png'
-            }
-          ]
-        }
-        , oscuro: {
-          camiseta: [{
-              name: 'Camiseta Roja'
-              , image: 'img/camiseta_roja.png'
-            }
-            , {
-              name: 'Camiseta Amarilla'
-              , image: 'img/camiseta_amarilla.png'
-            }
-          ]
-          , pantalon: [{
-              name: 'Pantalón Verde'
-              , image: 'img/pantalon_verde.png'
-            }
-            , {
-              name: 'Pantalón Gris'
-              , image: 'img/pantalon_gris.png'
-            }
-          ]
-          , zapatos: [{
-              name: 'Zapatos Azules'
-              , image: 'img/zapatos_azules.png'
-            }
-            , {
-              name: 'Zapatos Rojos'
-              , image: 'img/zapatos_rojos.png'
-            }
-          ]
-        }
-      };
-
-      document.getElementById('generate-outfit').addEventListener('click', generateOutfit);
-
-      function generateOutfit() {
-        const skinColor = document.getElementById('skin-color').value;
-        const category = document.getElementById('category').value;
-
-        const selectedOutfits = outfits[skinColor][category];
-        const randomIndex = Math.floor(Math.random() * selectedOutfits.length);
-        const selectedOutfit = selectedOutfits[randomIndex];
-
-        displayOutfit(selectedOutfit);
-      }
-
-      function displayOutfit(outfit) {
-        outfitDisplay.innerHTML = `
-      <div class="outfit-item">
-        <img src="${outfit.image}" alt="${outfit.name}" style="width: 100px; height: 100px;">
-        <p>${outfit.name}</p>
-      </div>
-      `;
-      }
-
-    </script>
 

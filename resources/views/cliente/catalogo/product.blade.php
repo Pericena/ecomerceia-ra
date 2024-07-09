@@ -6,10 +6,20 @@
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-<script src="{{ asset('js/gesture-detector.js') }}"></script>
-<script src="{{ asset('js/gesture-handler.js') }}"></script>
-<link type="text/css" rel="stylesheet" href="{{ asset('cliente/css/style.css') }}" />
-<link type="text/css" rel="stylesheet" href="{{ ('cliente/css/style-prefix.css') }}">
+
+<script src="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/js/gesture-detector.js"></script>
+
+<script src="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/js/gesture-handler.js"></script>
+
+
+
+<link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/cliente/css/style.css">
+
+ <link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/style-prefix.css">
+
+
+
+
 
 
 <div class="popup" id="vrPopup">
@@ -18,26 +28,17 @@
     <p>Descarga el código QR y escanéalo con la cámara de tu dispositivo.</p>
     <p>¡Explora nuestro probador virtual de ropa y descubre cómo te queda antes de comprar!</p>
     <center>
-      <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar width="400px" height="400px">
-      </model-viewer>
-
-
+      {{-- <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar width="400px" height="400px">
+      </model-viewer> --}}
       <a href="{{ asset('cliente/img/qr.png') }}" download="hiro.png" id="downloadLink">
         <img src="{{ asset('cliente/img/qr.png') }}" alt="Código QR" id="qrCode" width="150" height="150">
         <br>
         <p>Descargar</p>
         <br>
-
         <a href="https://pericena.github.io/declaracion/datos/index3.html">
           Utilizar el Dispositivo movil
         </a>
-
       </a>
-
-
-
-
-
     </center>
     <button class="btbaok" onclick="closePopup()"><i class='bx bxs-camera bx-md'></i></button>
   </div>
@@ -218,15 +219,12 @@
             </a-marker>
             <a-entity camera></a-entity>
           </a-scene>
-          {{-- <audio autoplay>
-            <source src="{{ asset('js/music.mp3') }}" type="audio/mpeg">
-          Tu navegador no soporta el elemento de audio.
-          </audio> --}}
+
         </div>
       </div>
       <div class="col-md-2 col-md-pull-5">
-        {{-- <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar style="width: 100%; height: 400px;">
-        </model-viewer> --}}
+        <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar style="width: 100%; height: 400px;">
+        </model-viewer>
         <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="" width="200" height="200">
 
       </div>

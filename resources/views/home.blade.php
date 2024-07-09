@@ -1,4 +1,4 @@
-    <link rel="stylesheet" href="./assets/css/style-prefix.css">
+
 
 @extends('layouts.app')
 @section('content')

@@ -1,4 +1,9 @@
-    <link rel="stylesheet" href="./assets/css/style-prefix.css">
+  <link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/cliente/css/style.css" />
+
+
+
+  <link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/style-prefix.css">
+
 
 
 @extends('cliente.cliente')
@@ -13,7 +18,7 @@
             @foreach ($productos as $producto)
             <div class="product card mb-4">
               <div class="product-img card-img-top">
-                <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="" class="img-fluid">
+                {{-- <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="" class="img-fluid"> --}}
                 <div class="product-label">
                   @if ($producto->idpromocion != '')
                   @foreach ($promociones as $promocion)
