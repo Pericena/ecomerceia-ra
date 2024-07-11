@@ -17,13 +17,13 @@
 
   <!-- Styles -->
 
-  <link href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://9ec4-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/bootstrap.min.css" rel="stylesheet">
 
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="shortcut icon" href="{{ asset('img/Logo.png') }}" />
   <link rel="canonical" href="https://demo-basic.adminkit.io/" />
-   <link href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/admin/static/css/app.css" rel="stylesheet">
+  <link href="https://9ec4-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/admin/static/css/app.css" rel="stylesheet">
 
   <link href="{{ asset('admin/static/css/app.css ') }}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">

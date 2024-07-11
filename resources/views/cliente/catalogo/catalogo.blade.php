@@ -1,6 +1,7 @@
 @extends('cliente.cliente')
 @yield('content')
-    <link rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/style-prefix.css">
+<link rel="stylesheet" href="https://7f7c-181-41-144-10.ngrok-free.app/public/assets/css/style-prefix.css">
+
 
 
 @section('content')

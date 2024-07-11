@@ -7,15 +7,15 @@
 <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
-<script src="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/js/gesture-detector.js"></script>
+<script src="/js/gesture-detector.js"></script>
 
-<script src="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/js/gesture-handler.js"></script>
+<script src="/js/gesture-handler.js"></script>
 
 
 
-<link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/cliente/css/style.css">
+<link type="text/css" rel="stylesheet" href="/cliente/css/style.css">
 
- <link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/style-prefix.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/style-prefix.css">
 
 
 

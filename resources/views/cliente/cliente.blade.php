@@ -21,7 +21,7 @@
   <!-- Styles -->
   <!--  Links de template -->
 
-  <link rel="shortcut icon" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/img/Logo.png" />
+  <link rel="shortcut icon" href="https://9ec4-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/img/Logo.png" />
 
 
   <link rel="canonical" href="https://demo-basic.adminkit.io/" />
@@ -33,7 +33,7 @@
 
   <!-- Slick -->
   <link type="text/css" rel="stylesheet" href="{{ asset('cliente/css/slick.css') }}" />
-  <link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/cliente/css/slick-theme.css" />
+  <link type="text/css" rel="stylesheet" href="https://9ec4-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/cliente/css/slick-theme.css" />
 
 
   <!-- nouislider -->
@@ -43,11 +43,11 @@
   <link rel="stylesheet" href="{{ asset('cliente/css/font-awesome.min.css') }}">
 
   <!-- Custom stlylesheet -->
-  <link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/cliente/css/style.css" />
+  <link type="text/css" rel="stylesheet" href="https://9ec4-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/cliente/css/style.css" />
 
 
 
-    <link type="text/css" rel="stylesheet" href="https://35e3-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/style-prefix.css">
+  <link type="text/css" rel="stylesheet" href="https://9ec4-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/style-prefix.css">
 
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
