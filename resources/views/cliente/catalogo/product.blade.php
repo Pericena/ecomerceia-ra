@@ -181,7 +181,8 @@
                         class="w-40 h-40 rounded-lg border-4 border-blue-500">
                 </a>
 
-                <p>Ingresa desde tu dispositivo movil haciendo click en la camara de abajo para poder escanear el código QR
+                <p>Ingresa desde tu dispositivo movil haciendo click en la camara de abajo o copiando el siguiente link:
+                    "https://pericena.github.io/declaracion/datos/index3.html" para poder escanear el código QR
                 </p>
                 <a href="https://pericena.github.io/declaracion/datos/index3.html"
                     class="text-blue-500 font-bold hover:underline"><i class='bx bxs-camera bx-md'></i></a>
