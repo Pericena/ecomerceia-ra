@@ -6,12 +6,180 @@
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-{{-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> --}}
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 <script src="/js/gesture-detector.js"></script>
-<script src="/js/gesture-handler.js"></script> 
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<script src="/js/gesture-handler.js"></script>
+<link type="text/css" rel="stylesheet" href="/cliente/css/style.css">
+<link type="text/css" rel="stylesheet" href="/assets/css/style-prefix.css">
 
-<!-- Modal -->
+
+
+
+
+{{-- 
+<div class="popup" id="vrPopup">
+  <div class="popup-message">
+    <h2>¡Bienvenido al Probador Virtual!</h2>
+    <p>Descarga el código QR y escanéalo con la cámara de tu dispositivo.</p>
+    <p>¡Explora nuestro probador virtual de ropa y descubre cómo te queda antes de comprar!</p>
+    <center>
+      <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar width="400px" height="400px">
+      </model-viewer>
+      <a href="{{ asset('cliente/img/qr.png') }}" download="hiro.png" id="downloadLink">
+        <img src="{{ asset('cliente/img/qr.png') }}" alt="Código QR" id="qrCode" width="150" height="150">
+        <br>
+        <p>Descargar</p>
+        <br>
+        <a href="https://pericena.github.io/declaracion/datos/index3.html">
+          Utilizar el Dispositivo movil
+        </a>
+      </a>
+    </center>
+    <button class="btbaok" onclick="closePopup()"><i class='bx bxs-camera bx-md'></i></button>
+  </div>
+</div> --}}
+
+
+<!-- Agregar una tarjeta de instrucciones de movimiento -->
+<div class="card">
+  <p><i class='bx bxs-up-arrow-square'></i></p>
+  <p><i class='bx bxs-down-arrow-square'></i></p>
+  <p><i class='bx bxs-right-arrow-square'></i></p>
+  <p><i class='bx bxs-left-arrow-square'></i></p>
+</div>
+
+
+
+<style>
+  /* Estilo para el icono */
+  .img-camara {
+    color: #000000;
+    font-size: 5em;
+    position: relative;
+    top: -100px;
+  }
+
+  .btbaok {
+    color: #000000;
+    font-size: 20px;
+    padding: 10px;
+    background: transparent;
+    border-radius: 10%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 51, 51, 0.7);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .popup-message {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(3, 6, 33);
+    color: #000000;
+  }
+
+  .card {
+    position: fixed;
+    top: 100px;
+    left: 10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #000000;
+  }
+
+  .container-chat {
+    position: fixed;
+    top: 500px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background: rgb(3, 6, 33);
+    color: #000000;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 10px;
+  }
+
+  .data1 {
+    float: left;
+  }
+
+  .data2 {
+    float: right;
+  }
+
+  .back-button {
+    text-align: center;
+    background-color: #191d21;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .back-button:hover {
+    background-color: rgb(3, 6, 33);
+  }
+
+</style>
+
+
+<script>
+  // Función para abrir la ventana emergente
+  function openPopup() {
+    var popup = document.getElementById("vrPopup");
+    popup.style.display = "flex";
+  }
+  // Función para cerrar la ventana emergente
+  function closePopup() {
+    var popup = document.getElementById("vrPopup");
+    popup.style.display = "none";
+  }
+  // Función para detectar si el navegador es Google Chrome
+  function isChrome() {
+    const isChromium = window.chrome;
+    const winNav = window.navigator;
+    const vendorName = winNav.vendor;
+    const isOpera = winNav.userAgent.indexOf("OPR") > -1;
+    const isIEedge = winNav.userAgent.indexOf("Edg") > -1;
+    if (isChromium !== null && typeof isChromium !== "undefined" && isOpera === false && isIEedge === false) {
+      // Es Google Chrome
+      return true;
+    }
+    return false;
+  }
+  // Función para mostrar un mensaje si el navegador es Google Chrome
+  function showMessage() {
+    if (isChrome()) {
+      // alert("Estás usando Google Chrome.");
+    } else {
+      alert("You are not using Google Chrome. the commet coders app only works for google chrome");
+    }
+  }
+  // Llama a la función para mostrar el mensaje
+  showMessage();
+  // Abre la ventana emergente al cargar la página
+  window.onload = openPopup;
+
+</script>
+
+<br><br><br><br><br><br><br><br><br><br>
+
 
 <div id="breadcrumb" class="section">
   <div class="container">
@@ -49,12 +217,13 @@
 
         </div>
       </div>
-      <div class="col-md-2 col-md-pull-2">
+      <div class="col-md-2 col-md-pull-5">
         <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar style="width: 100%; height: 400px;">
         </model-viewer>
-        {{-- <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="" width="200" height="200"> --}}
+        <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="" width="200" height="200">
+
       </div>
-      <div class="col-md-5" style="color: #000000">
+      <div class="col-md-5" style="color: #fff">
         <div class="product-details">
           <h2 class="product-name">{{ $producto->name }}</h2>
           <div>
@@ -101,18 +270,6 @@
               <button class="add-to-cart-btn" form="add"><i class="fa fa-shopping-cart"></i>
                 Añadir</button>
             </form>
-<br>
-
-<button id="openModalBtn" class="bg-black hover:bg-red-400 text-white font-bold py-2 px-4 rounded border border-white flex items-center">
-  <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-    <path d="M10 20c-5.523 0-10-4.477-10-10s4.477-10 10-10 10 4.477 10 10-4.477 10-10 10zm0-18c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm1 12h-2v-1h2v1zm0-3h-2v-5h2v5z" />
-  </svg>
-  RA Provador de ropa
-</button>
-
-
-
-
           </div>
           <ul class="product-btns">
             <li><a href="#"><i class="fa fa-heart-o"></i> Deseos</a></li>
@@ -145,53 +302,6 @@
     </div>
   </div>
 </div>
-
-<div id="myModal" class="fixed inset-0 z-50 flex justify-center items-center bg-gray-500 bg-opacity-75 hidden">
-  <div class="modal-content bg-white w-full md:max-w-2xl p-6 md:p-10 rounded-lg shadow-lg flex flex-col items-center">
-    <div class="flex justify-between items-center w-full mb-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-800">¡Bienvenido al Probador Virtual!</h2>
-      <button id="closeModalBtn" class="text-gray-600 hover:text-gray-800">
-        <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-          <path d="M14.7 5.3a1 1 0 010 1.4L11.42 10l3.3 3.3a1 1 0 01-1.4 1.4l-3.3-3.3-3.3 3.3a1 1 0 01-1.4-1.4l3.3-3.3-3.3-3.3a1 1 0 111.4-1.4l3.3 3.3 3.3-3.3a1 1 0 011.4 0z" />
-        </svg>
-      </button>
-    </div>
-
-    <div class="flex flex-col items-center">
-      <p class="text-gray-700 leading-relaxed text-center mb-4">Escanea el código QR para explorar nuestro probador virtual de ropa antes de comprar.</p>
-      <a href="{{ asset('cliente/img/qr.png') }}" download="hiro.png" id="downloadLink" class="mb-4">
-        <img src="{{ asset('cliente/img/qr.png') }}" alt="Código QR" class="w-40 h-40 rounded-lg border-4 border-blue-500">
-      </a>
-      
-        <p>Utilizar en el dispositivo móvil</p>
-      <a href="https://pericena.github.io/declaracion/datos/index3.html" class="text-blue-500 font-bold hover:underline"><i class='bx bxs-camera bx-md'></i></a>
-
-    </div>
-
-
-  </div>
-</div>
-
-
-    
-
-  </div>
-</div>
-
-
-
-<script>
-  // JavaScript para controlar el modal
-  document.getElementById('openModalBtn').addEventListener('click', function() {
-    document.getElementById('myModal').classList.remove('hidden');
-  });
-
-  document.getElementById('closeModalBtn').addEventListener('click', function() {
-    document.getElementById('myModal').classList.add('hidden');
-  });
-
-</script>
-
-
-
+{{-- @extends('cliente.cliente') --}}
 @endsection
+

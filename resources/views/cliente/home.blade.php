@@ -1,13 +1,22 @@
-  <link type="text/css" rel="stylesheet" href="https://9ec4-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/cliente/css/style.css" />
-
-
-
-  <link type="text/css" rel="stylesheet" href="https://9ec4-181-41-144-10.ngrok-free.app/ecomerceia-ra/public/assets/css/style-prefix.css">
-
-
-
   @extends('cliente.cliente')
   @section('content')
+  
+
+  @extends('cliente.catalogo.blog')
+  @yield('content')
+
+  @extends('cliente.catalogo.oferta')
+  @yield('content')
+
+  @extends('cliente.catalogo.productolista')
+  @yield('content')
+
+  @extends('cliente.catalogo.categoria')
+  @yield('content')
+
+  @extends('cliente.catalogo.banner')
+  @yield('content')
+
 
   <div class="container my-4">
     <div class="row">
@@ -18,7 +27,7 @@
               @foreach ($productos as $producto)
               <div class="product card mb-4">
                 <div class="product-img card-img-top">
-                  <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="" class="img-fluid"> --}}
+                  <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="{{ $producto->name }}" class="img-fluid">
                   <div class="product-label">
                     @if ($producto->idpromocion != '')
                     @foreach ($promociones as $promocion)
@@ -33,13 +42,13 @@
                     @endif
                   </div>
                 </div>
-                <div class="">
+                <div class="card-body">
                   @foreach ($categorias as $categoria)
                   @if ($categoria->id == $producto->idcategoria)
                   <p class="product-category">{{ $categoria->nombre }}</p>
                   @endif
                   @endforeach
-                  <h5 class="product-name card-title"><a href="#">{{ $producto->name }}</a></h5>
+                  <h5 class="product-name card-title">{{ $producto->name }}</h5>
                   @if ($producto->idpromocion != '')
                   <h4 class="product-price">Bs {{ $producto->precioUnitario - $producto->precioUnitario * $descuento }}
                     <del class="product-old-price">Bs {{ $producto->precioUnitario }}</del>
@@ -59,7 +68,7 @@
                     <button class="btn btn-outline-secondary add-to-compare"><i class="fa fa-exchange"></i></button>
                     <button class="btn btn-outline-secondary quick-view">
                       <i class="fa fa-eye"></i>
-                      <a href="{{ route('catalogo.show', $producto->id) }}" class="text-dark">quick view</a>
+                      <a href="{{ route('catalogo.show', $producto->id) }}" class="text-dark">Ver más</a>
                     </button>
                   </div>
                   <form action="{{ route('detalleCarrito.store') }}" method="POST" enctype="multipart/form-data" id="create{{ $loop->iteration }}" class="mt-3">
@@ -79,7 +88,7 @@
                   </form>
                 </div>
                 <div class="card-footer">
-                  <button class="btn btn-danger btn-block add-to-cart-btn" form="create{{ $loop->iteration }}"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                  <button class="btn btn-danger btn-block add-to-cart-btn" form="create{{ $loop->iteration }}"><i class="fa fa-shopping-cart"></i> Añadir al carrito</button>
                 </div>
               </div>
               @endforeach
@@ -91,20 +100,7 @@
     </div>
   </div>
 
-  @extends('cliente.catalogo.blog')
-  @yield('content')
 
-  @extends('cliente.catalogo.oferta')
-  @yield('content')
-
-  @extends('cliente.catalogo.productolista')
-  @yield('content')
-
-  @extends('cliente.catalogo.categoria')
-  @yield('content')
-
-  @extends('cliente.catalogo.banner')
-  @yield('content')
 
   @extends('cliente.header')
   @yield('content')
