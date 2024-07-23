@@ -13,7 +13,7 @@
   </div>
   <div class="col-md-10">
     <div class="form-group">
-      <label>Género</label>
+      <label for="genero">Género</label>
       <div class="form-check">
         <input class="form-check-input" type="radio" id="sexoM" name="sexo" value="M" @if ((isset($perfil) ? $perfil->sexo : old('sexo')) == 'M') checked @endif>
         <label class="form-check-label" for="sexoM">Masculino</label>
@@ -48,7 +48,7 @@
   @else
   <div class="col-md-10">
     <div class="form-group">
-      <label>Estado</label>
+      <label for="estado">Estado</label>
       <div class="form-check">
         <input class="form-check-input" type="radio" id="estadoInactivo" name="estadoemp" value="Inactivo" @if ((isset($perfil) ? $perfil->estadoemp : old('estadoemp')) == 'Inactivo') checked @endif>
         <label class="form-check-label" for="estadoInactivo">Inactivo</label>
@@ -62,8 +62,6 @@
   <input type="hidden" name="tipoc" value="0">
   <input type="hidden" name="tipoe" value="1">
   @endif
-
-  {{-- Protección CSRF --}}
   @csrf
 </div>
 
