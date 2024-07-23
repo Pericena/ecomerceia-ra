@@ -1,21 +1,17 @@
   @extends('cliente.cliente')
   @section('content')
   
-
-  @extends('cliente.catalogo.blog')
-  @yield('content')
-
   @extends('cliente.catalogo.oferta')
   @yield('content')
 
   @extends('cliente.catalogo.productolista')
   @yield('content')
 
-  @extends('cliente.catalogo.categoria')
-  @yield('content')
+  {{-- @extends('cliente.catalogo.categoria')
+  @yield('content') --}}
 
-  @extends('cliente.catalogo.banner')
-  @yield('content')
+  {{-- @extends('cliente.catalogo.banner')
+  @yield('content') --}}
 
 
   <div class="container my-4">

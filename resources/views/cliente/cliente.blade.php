@@ -9,15 +9,13 @@
     <title>eCommerce</title>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Ecomerce') }}</title>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
     <!--  Links de template -->
     <link rel="shortcut icon" href="{{ asset('img/Logo.png') }}" />
-
-
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -25,20 +23,14 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('cliente/css/bootstrap.min.css') }}" />
     <!-- Slick -->
     <link type="text/css" rel="stylesheet" href="{{ asset('cliente/css/slick.css') }}" />
-    {{-- <link type="text/css" rel="stylesheet" href="{{ asset('cliente/css/slick-theme.css') }}" /> --}}
-
-
     <!-- nouislider -->
     <link type="text/css" rel="stylesheet" href="{{ asset('cliente/css/nouislider.min.css') }}" />
-
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="{{ asset('cliente/css/font-awesome.min.css') }}">
     <!-- Custom stlylesheet -->
     <link type="text/css" rel="stylesheet" href="{{ asset('cliente/css/style.css') }}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style-prefix.css') }}">
-    
-    <script src="{{ asset('assets/js/script.js') }}"></script>
-
+  
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
@@ -488,7 +480,7 @@
     <!-- jQuery Plugins -->
 
 
-
+    <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('cliente/js/jquery.min.js') }}"></script>
     <script src="{{ asset('cliente/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('cliente/js/slick.min.js') }}"></script>
