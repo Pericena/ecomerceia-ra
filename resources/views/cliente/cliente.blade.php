@@ -30,7 +30,7 @@
 
 <body>
     <!-- HEADER -->
-  <header>
+  {{-- <header>
     <div class="header-top">
       <div class="container">
         <ul class="header-social-container">
@@ -288,7 +288,7 @@
         </ul>
       </div>
     </nav>
-  </header>
+  </header> --}}
 
 
     <!-- /NAVIGATION -->

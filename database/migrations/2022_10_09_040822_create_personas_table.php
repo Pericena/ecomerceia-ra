@@ -11,26 +11,33 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('personas', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->integer('ci')->unique();
-            $table->string('email')->unique();
-            $table->char('sexo');
-            $table->integer('celular')->unique();
-            $table->string('domicilio');
-            $table->double('salario')->nullable();
-            $table->string('estadoemp')->nullable();
-            $table->string('estadocli')->nullable();
-            $table->smallInteger('tipoc');
-            $table->smallInteger('tipoe');
-            $table->unsignedBigInteger('iduser')->nullable();
-            $table->foreign('iduser')->references('id')->on('users');
-            $table->timestamps();
-        });
-    }
+  public function up()
+  {
+    Schema::create('personas', function (Blueprint $table) {
+      $table->id();
+
+      // Personal information
+      $table->string('name');
+      $table->integer('ci')->unique();
+      $table->string('email')->unique();
+      $table->char('sexo', 1);
+      $table->bigInteger('celular')->nullable(); // Changed to bigInteger
+      $table->string('domicilio');
+
+      // Employment details
+      $table->double('salario')->nullable();
+      $table->string('estadoemp')->nullable(); // Employment status
+      $table->string('estadocli')->nullable(); // Client status
+
+      // Types and references
+      $table->smallInteger('tipoc'); // Client type
+      $table->smallInteger('tipoe'); // Employment type
+      $table->foreignId('iduser')->nullable()->constrained('users')->onDelete('set null');
+
+      $table->timestamps();
+    });
+  }
+
 
     /**
      * Reverse the migrations.

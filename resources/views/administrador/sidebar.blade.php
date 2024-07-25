@@ -9,25 +9,25 @@
       <li class="sidebar-header">USUARIOS</li>
       <li class="sidebar-item">
         <a class="sidebar-link" href="{{ url('administrador/empleados') }}">
-          <i class="fa fa-user-tie"></i> <span class="align-middle">Gestionar Empleados</span>
+          <i class="fa fa-user-tie"></i> <span class="align-middle">Empleados</span>
         </a>
       </li>
       <li class="sidebar-item">
         <a class="sidebar-link" href="{{ url('administrador/clientes') }}">
-          <i class="fa fa-user"></i> <span class="align-middle">Gestionar Clientes</span>
+          <i class="fa fa-user"></i> <span class="align-middle">Clientes</span>
         </a>
       </li>
-      <li class="sidebar-item">
+      {{-- <li class="sidebar-item">
         <a class="sidebar-link" href="{{ url('administrador/roles') }}">
           <i class="fa fa-user-lock"></i> <span class="align-middle">Roles</span>
         </a>
-      </li>
+      </li> --}}
       <li class="sidebar-item">
         <a class="sidebar-link" href="{{ url('administrador/bitacoras') }}">
           <i class="fa fa-clipboard"></i> <span class="align-middle">Bitácora</span>
         </a>
       </li>
-      <li class="sidebar-header">INSUMOS</li>
+      <li class="sidebar-header">IVENTARIO</li>
       <li class="sidebar-item">
         <a class="sidebar-link" href="{{ url('administrador/producto') }}">
           <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Productos</span>
