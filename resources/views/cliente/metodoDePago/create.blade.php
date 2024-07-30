@@ -1,4 +1,5 @@
 @extends('cliente.cliente')
+@extends('cliente.header')
 @section('content')
     <div class="card mt-4">
         @include('layouts.messages')

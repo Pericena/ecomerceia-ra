@@ -137,21 +137,20 @@
                       <h4 class="product-price">Bs {{ $producto->precioUnitario }}
                       </h4>
                       @endif
-                      <div class="product-rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                      </div>
                       <div class="product-btns">
                         <button class="add-to-wishlist">
                           <i class="fa fa-heart-o"></i>
                           <span class="tooltipp">Favorito</span></button>
                         <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">Compartir</span></button>
-                        <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">
-                            <a href="{{ route('catalogo.show', $producto->id) }}" style="color: white">
-                              Ver</a> </span></button>
+                        <button class="quick-view" style="color:black"><i class="fa fa-eye"></i><span class="tooltipp">
+                            <a href="{{ route('catalogo.show', $producto->id) }}" style="color: rgb(5, 5, 5)">
+                              Ver</a> </span>
+                            
+                        </button>
+                                                    <a href="{{ route('catalogo.show', $producto->id) }}" style="color: rgb(5, 5, 5)">
+                                                      Ver<i class='bx bx-user'></i></a> </span>
+
+
                         <form action="{{ route('detalleCarrito.store') }}" method="POST" enctype="multipart/form-data" id="create{{ $a }}">
                           @csrf
                           <div class="quantity-input">

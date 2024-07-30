@@ -1,10 +1,8 @@
 @extends('cliente.cliente')
+@extends('cliente.header')
 @section('content')
-    <!-- Order Details -->
     <div class="section">
-        <!-- container -->
         <div class="container">
-            <!-- row -->
             <div class="row">
                 <div class="col-md-12 order-details">
                     <div class="section-title text-center">
@@ -45,7 +43,7 @@
     <!-- /Order Details -->
     <div class="d-table-cell align-middle">
         <div class="text-center mt-4">
-            <h3 class="title">Payment Method</h3>
+            <h3 class="title">Método de pago</h3>
         </div>
         <div class="card">
             <div class="card-body">
@@ -59,7 +57,8 @@
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a href="{{ route('pagos.show', $tipoPago->id) }}"
-                                                    class="primary-btn order-submit"><i class="fa fa-check"></i></a>
+                                                    class="primary-btn order-submit">Pagar<i class="fa fa-check"></i></a>
+
                                             </div>
                                         </td>
                                     </tr>

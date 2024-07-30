@@ -1,5 +1,5 @@
 @extends('cliente.cliente')
-
+@extends('cliente.header')
 @section('content')
 <div id="breadcrumb" class="section">
   <div class="container">

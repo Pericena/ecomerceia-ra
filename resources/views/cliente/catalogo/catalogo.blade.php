@@ -1,11 +1,6 @@
 @extends('cliente.cliente')
 @extends('cliente.header')
-
-
-
 @section('content')
-
-<!-- MIGAJAS DE PAN -->
 <div id="breadcrumb" class="section">
   <div class="container">
     <div class="row">
@@ -19,7 +14,6 @@
     </div>
   </div>
 </div>
-<!-- /MIGAJAS DE PAN -->
 
 <!-- PRODUCTOS DE LA TIENDA -->
 <div class="row">
@@ -68,9 +62,7 @@
         <p class="product-category">{{ $categoria->nombre }}</p>
         @endif
         @endforeach
-        <!-- Nombre del producto -->
         <h3 class="product-name"><a href="#">{{ $producto->name }}</a></h3>
-        <!-- Precio del producto -->
         @if ($producto->idpromocion != '')
         <h4 class="product-price">Bs {{ $producto->precioUnitario - $producto->precioUnitario * $descuento }}
           <del class="product-old-price">Bs {{ $producto->precioUnitario }}</del>
@@ -78,17 +70,16 @@
         @else
         <h4 class="product-price">Bs {{ $producto->precioUnitario }}</h4>
         @endif
-        <!-- Calificación del producto -->
         <div class="product-rating">
-          @for ($i = 0; $i < 5; $i++) <i class="fa fa-star"></i>
+          @for ($i = 0; $i < 5; $i++) <i class='bx bxs-star'></i>
             @endfor
         </div>
-        <!-- Botones del producto -->
         <div class="product-btns">
           <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Agregar a favoritos</span></button>
           <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">Agregar para comparar</span></button>
-          <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp"><a href="{{ route('catalogo.show', $producto->id) }}" style="color: white">Vista rápida</a></span></button>
-          <!-- Formulario de añadir al carrito -->
+          <button class="quick-view">
+            Ver
+            <i class="fa fa-eye"></i><span class="tooltipp"><a href="{{ route('catalogo.show', $producto->id) }}" style="color: white">Vista rápida</a></span></button>
           <form action="{{ route('detalleCarrito.store') }}" method="POST" enctype="multipart/form-data" id="create{{ $contador_fila }}">
             @csrf
             <input type="number" id="cantidad" name="cantidad" min="1" max="1000" value="1">
@@ -104,13 +95,11 @@
           </form>
         </div>
       </div>
-      <!-- Botón de añadir al carrito -->
       <div class="add-to-cart">
         <button class="add-to-cart-btn" form="create{{ $contador_fila }}"><i class="fa fa-shopping-cart"></i> Añadir</button>
       </div>
     </div>
   </div>
-  <!-- Si se muestran 3 productos por fila -->
   @if ($contador == 3)
   <div class="col-md-12 col-xs-6">
     <div class="product">
@@ -121,17 +110,13 @@
   @endphp
   @endif
   @endforeach
-  <!-- Columna de cierre si no hay suficientes productos para completar la fila -->
   <div class="col-md-12 col-xs-6">
     <div class="product">
     </div>
   </div>
 </div>
-
-<!-- Paginación -->
 <div class="pagination justify-content-end">
   {!! $productos->links() !!}
 </div>
 
 @endsection
-
