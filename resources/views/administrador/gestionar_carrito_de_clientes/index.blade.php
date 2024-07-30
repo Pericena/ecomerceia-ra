@@ -24,7 +24,7 @@
                             <th>Celular</th>
                             <th>Total Bs</th>
                             <th>Estado Del Carrito</th>
-                            <th>Acciones</th>
+                            {{-- <th>Acciones</th> --}}
                         </tr>
                     </thead>
                     <tbody>
@@ -43,12 +43,12 @@
                                         <td>{{ $cliente->celular }}</td>
                                         <td>{{ $carrito->total }}</td>
                                         <td>{{ $carrito->estado }}</td>
-                                        <td>
+                                        {{-- <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                     <a href="{{ route('carritosClientes.edit', $carrito->id) }}"
                                                         class="btn btn-primary"><i class="fas fa-eye"></i></a>
                                             </div>
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                 @endif
                             @endforeach

@@ -53,12 +53,12 @@
                     </div>
                 </div>
                 <div class="col-md-2 col-md-pull-2">
-                    <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar
+                    {{-- <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar
                         ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar
                         ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar
                         style="width: 100%; height: 400px;">
-                    </model-viewer>
-                    {{-- <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="" width="200" height="200"> --}}
+                    </model-viewer> --}}
+                  <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="" width="200" height="200">
                 </div>
                 <div class="col-md-5" style="color: #000000">
                     <div class="product-details">
@@ -181,11 +181,18 @@
                         class="w-40 h-40 rounded-lg border-4 border-blue-500">
                 </a>
 
+
+
                 <p>Ingresa desde tu dispositivo movil haciendo click en la camara de abajo o copiando el siguiente link:
                     "https://pericena.github.io/declaracion/datos/index3.html" para poder escanear el código QR
                 </p>
-                <a href="https://pericena.github.io/declaracion/datos/index3.html"
-                    class="text-blue-500 font-bold hover:underline"><i class='bx bxs-camera bx-md'></i></a>
+                
+@if(isset($producto))
+<a href="{{ route('productrv', ['id1' => $producto->id, 'id2' => $producto->id]) }}" class="text-blue-500 font-bold hover:underline">
+  <i class='bx bxs-camera bx-md'></i>
+</a>
+@endif
+
 
             </div>
 

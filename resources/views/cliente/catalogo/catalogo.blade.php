@@ -1,4 +1,8 @@
 @extends('cliente.cliente')
+@extends('cliente.header')
+
+
+
 @section('content')
 
 <!-- MIGAJAS DE PAN -->

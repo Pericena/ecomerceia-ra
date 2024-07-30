@@ -27,7 +27,7 @@
           <i class="fa fa-clipboard"></i> <span class="align-middle">Bitácora</span>
         </a>
       </li>
-      <li class="sidebar-header">IVENTARIO</li>
+      <li class="sidebar-header">INVENTARIO</li>
       <li class="sidebar-item">
         <a class="sidebar-link" href="{{ url('administrador/producto') }}">
           <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Productos</span>
@@ -69,17 +69,17 @@
           <i class="align-middle" data-feather="dollar-sign"></i> <span class="align-middle">Metodo de Pagos</span>
         </a>
       </li>
-      <li class="sidebar-header">CRM</li>
-      <li class="sidebar-item">
+      {{-- <li class="sidebar-header">CRM</li> --}}
+      {{-- <li class="sidebar-item">
         <a class="sidebar-link" href="{{ url('administrador/spam') }}">
           <i class="align-middle" data-feather="edit"></i> <span class="align-middle">Spam</span>
         </a>
-      </li>
-      <li class="sidebar-item">
+      </li> --}}
+      {{-- <li class="sidebar-item">
         <a class="sidebar-link" href="{{ url('administrador/segmentos') }}">
           <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Segmentos</span>
         </a>
-      </li>
+      </li> --}}
     </ul>
     <div class="sidebar-cta"></div>
   </div>

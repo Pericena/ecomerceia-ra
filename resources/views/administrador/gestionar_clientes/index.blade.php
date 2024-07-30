@@ -26,11 +26,11 @@
   <div class="card-body">
     <div class="row">
       @can('cliente.create')
-      <div class="col-2">
+      {{-- <div class="col-2">
         <a href="{{ route('clientes.create') }}" class="btn btn-primary ml-auto">
           <i class="fas fa-plus"></i>
           Agregar</a>
-      </div>
+      </div> --}}
       @endcan
       <div class="pagination justify-content-end">
         {{ $clientes->links() }}

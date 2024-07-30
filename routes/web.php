@@ -86,6 +86,9 @@ Route::prefix('/cliente')->group(function () {
     Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('cliente');
     Route::resource('/categoriaShow', CategoriaShowController::class);
     Route::resource('/catalogo', CatalogoController::class);
+    
+    Route::get('/catalogo/{id1}/{id2}', [CatalogoController::class, 'showproducto'])->name('productrv');
+    
     Route::group(['middleware' => ['auth']], function () {
         Route::resource('/AddressClient', AddressClientController::class);
         Route::resource('/detalleCarrito', DetalleCarritoController::class);
