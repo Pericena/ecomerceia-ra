@@ -1,7 +1,6 @@
 @extends('cliente.cliente')
 @extends('cliente.header')
 @section('content')
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
@@ -11,9 +10,7 @@
 <script src="/js/gesture-detector.js"></script>
 <script src="/js/gesture-handler.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
 <!-- Modal -->
-
 <div id="breadcrumb" class="section">
   <div class="container">
     <div class="row">
@@ -39,13 +36,13 @@
           {{-- <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector id="scene">
             <a-assets>
               <a-asset-item id="bowser" src="{{ asset('public/img/' . $producto->modelo) }}">
-              </a-asset-item>
-            </a-assets>
-            <a-marker preset="hiro" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="markerA">
-              <a-entity id="bowser-model" gltf-model="#bowser" position="0 0 0" scale="0.05 0.05 0.05" class="clickable" gesture-handler>
-              </a-entity>
-            </a-marker>
-            <a-entity camera></a-entity>
+          </a-asset-item>
+          </a-assets>
+          <a-marker preset="hiro" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="markerA">
+            <a-entity id="bowser-model" gltf-model="#bowser" position="0 0 0" scale="0.05 0.05 0.05" class="clickable" gesture-handler>
+            </a-entity>
+          </a-marker>
+          <a-entity camera></a-entity>
           </a-scene> --}}
         </div>
       </div>
@@ -172,22 +169,11 @@
         <i class='bx bxs-camera bx-md'></i>
       </a>
       @endif
-
-
     </div>
-
-
   </div>
 </div>
-
-
-
-
 </div>
 </div>
-
-
-
 <script>
   // JavaScript para controlar el modal
   document.getElementById('openModalBtn').addEventListener('click', function() {
