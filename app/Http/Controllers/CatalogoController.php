@@ -76,6 +76,23 @@ class CatalogoController extends Controller
         return view('cliente.catalogo.product', compact('productos', 'producto', 'categorias', 'marcas', 'promociones'));
     }
 
+
+  public function showproducto($id1, $id2)
+  {
+    $productos = producto::get();
+    $producto = producto::findOrFail($id1);
+    $categorias = categoria::get();
+    $marcas = marca::get();
+    $promociones = Promocion::get();
+    if (auth()->user()) {
+      $carrito = Carrito::where('idCliente', auth()->user()->id);
+      $carrito = $carrito->where('estado', 1)->first();
+      $detallesCarrito = DetalleCarrito::get();
+      return view('cliente.catalogo.productlist', compact('productos', 'producto', 'categorias', 'marcas', 'promociones', 'carrito', 'detallesCarrito'));
+    }
+    return view('cliente.catalogo.productlist', compact('productos', 'producto', 'categorias', 'marcas', 'promociones'));
+  }
+
     /**
      * Show the form for editing the specified resource.
      *

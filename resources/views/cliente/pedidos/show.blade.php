@@ -1,5 +1,7 @@
 @extends('cliente.cliente')
+@extends('cliente.header')
 @section('content')
+
     <div class="card mt-3">
         <div class="card-header d-inline">
             <h1>

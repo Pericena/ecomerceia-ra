@@ -2,7 +2,7 @@
 <div class="row">
     <div class="billing-details">
         <div class="card-header d-inline-flex">
-            <h1>Address</h1>
+            <h1>Dirección</h1>
         </div>
         <div class="col-12">
             @foreach ($direcciones as $direccion)

@@ -50,7 +50,7 @@
             <th>Celular</th>
             <th>Domicilio</th>
             <th>Estado</th>
-            <th>Acciones</th>
+            {{-- <th>Acciones</th> --}}
           </tr>
         </thead>
         <tbody>
@@ -65,7 +65,7 @@
             <td>{{ $empleado->celular }}</td>
             <td>{{ $empleado->domicilio }}</td>
             <td>{{ $empleado->estadoemp }}</td>
-            <td>
+            {{-- <td>
               <div class="btn-group" role="group" aria-label="Basic example">
                 @can('empleado.update')
                 <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-primary">
@@ -82,7 +82,7 @@
                 </form>
                 @endcan
               </div>
-            </td>
+            </td> --}}
           </tr>
           @endif
           @endforeach

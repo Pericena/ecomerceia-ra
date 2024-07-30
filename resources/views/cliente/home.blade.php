@@ -1,23 +1,17 @@
   @extends('cliente.cliente')
   @section('content')
   
-
-  @extends('cliente.catalogo.blog')
-  @yield('content')
-
   @extends('cliente.catalogo.oferta')
   @yield('content')
 
   @extends('cliente.catalogo.productolista')
   @yield('content')
 
-  @extends('cliente.catalogo.categoria')
-  @yield('content')
+  {{-- @extends('cliente.catalogo.categoria')
+  @yield('content') --}}
 
-  @extends('cliente.catalogo.banner')
-  @yield('content')
-
-
+  {{-- @extends('cliente.catalogo.banner')
+  @yield('content') --}}
   <div class="container my-4">
     <div class="row">
       <div class="col-12">
@@ -56,13 +50,6 @@
                   @else
                   <h4 class="product-price">Bs {{ $producto->precioUnitario }}</h4>
                   @endif
-                  <div class="product-rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                  </div>
                   <div class="product-btns d-flex justify-content-around mt-3">
                     <button class="btn btn-outline-secondary add-to-wishlist"><i class="fa fa-heart-o"></i></button>
                     <button class="btn btn-outline-secondary add-to-compare"><i class="fa fa-exchange"></i></button>
@@ -99,10 +86,6 @@
       </div>
     </div>
   </div>
-
-
-
   @extends('cliente.header')
   @yield('content')
-
   @endsection

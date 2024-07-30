@@ -1,5 +1,8 @@
 @extends('cliente.cliente')
+@extends('cliente.header')
 @section('content')
+
+
     <!-- BREADCRUMB -->
     <div id="breadcrumb" class="section">
         <!-- container -->
