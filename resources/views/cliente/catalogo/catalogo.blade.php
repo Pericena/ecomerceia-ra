@@ -66,12 +66,12 @@
                         @endforeach
                         <h3 class="product-name"><a href="#">{{ $producto->name }}</a></h3>
                         @if ($producto->idpromocion != '')
-                            <h4 class="product-price">Bs
+                            <h4 class="product-price">Bs.
                                 {{ $producto->precioUnitario - $producto->precioUnitario * $descuento }}
-                                <del class="product-old-price">Bs {{ $producto->precioUnitario }}</del>
+                                <del class="product-old-price">Bs. {{ $producto->precioUnitario }}</del>
                             </h4>
                         @else
-                            <h4 class="product-price">Bs {{ $producto->precioUnitario }}</h4>
+                            <h4 class="product-price">Bs. {{ $producto->precioUnitario }}</h4>
                         @endif
                         <div class="product-rating">
                             @for ($i = 0; $i < 5; $i++)
